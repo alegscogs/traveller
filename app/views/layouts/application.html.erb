@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Traveller</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" href="/leaflet/leaflet.css" />
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <% if current_user %>
+        Hi <%= current_user.name %>
+        |
+        <%= link_to 'Create a post', new_post_path %>
+        |
+        <%= link_to 'Log out', logout_path, method: :delete %>
+      <% else %>
+        <%= link_to 'Log in', login_path %>
+        |
+        <%= link_to 'Sign up', new_user_path %>
+      <% end %>
+    </header>
+
+    <%= yield %>
+  </body>
+</html>

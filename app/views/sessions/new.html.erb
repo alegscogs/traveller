@@ -1,0 +1,18 @@
+<%= form_with(url: login_path, scope: :session, local: true) do |form| %>
+  <div class="error">
+    <%= flash[:error] %>
+  </div>
+
+  <div class="actions">
+    <%= form.label :email %>
+    <%= form.email_field :email, id: "session_email" %>
+
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation %>
+
+    <%= form.submit 'Log in' %>
+  </div>
+<% end %>

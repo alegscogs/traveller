@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  title: first post
+  body: lorem ipsum
+  address: via cardinal de luca 1, rome, Italy 00196
+  latitude: 41.916830
+  longitude: 12.472850
+
+two:
+  user: one
+  title: second post
+  body: dolor sit amet
+  address: viale parioli 91, rome, Italy 00196
+  latitude: 41.928312
+  longitude: 12.486139

@@ -1,0 +1,7 @@
+<div class="mini-post">
+  <h5><%= link_to post.title, post %></h5>
+  <% if post.photo.present? %>
+    <%= image_tag post.photo.url(:thumb) %>
+  <% end %>
+  <p><%= post.body.truncate(140) %></p>
+</div>

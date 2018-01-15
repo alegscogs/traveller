@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @post.title %></h1>
+
+<p>by <%= link_to @post.user.name, @post.user %></p>
+
+<p>where: <%= @post.longitude %>, <%= @post.latitude %></p>
+
+<% if @post.photo.present? %>
+  <p><%= image_tag @post.photo.url(:medium) %></p>
+<% end %>
+
+<p><%= @post.body %></p>
+
+<% if @post.user == current_user %>
+  <%= link_to 'Edit', edit_post_path(@post) %> |
+<% end %>

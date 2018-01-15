@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h1>User: <%= @user.name %></h1>
+
+<% @user.posts.each do |post| %>
+  <h2><%= link_to post.title, post %></h2>
+  <% if post.photo.present? %>
+    <p><%= image_tag post.photo.url(:thumb) %></p>
+  <% end %>
+  <p><%= post.body.truncate(100) %></p>
+<% end %>
